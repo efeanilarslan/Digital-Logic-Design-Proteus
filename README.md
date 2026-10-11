@@ -9,10 +9,18 @@ Bu proje; transistör seviyesinden başlayarak temel mantık kapılarına, belle
 Ayrık bileşenler (BJT transistörler, dirençler, butonlar ve LED'ler) kullanılarak breadboard üzerinde kurulan mantık devresinin gerçek zamanlı çalışması:
 
 <p align="center">
-  <img src="docs/images/hardware_demo.gif" alt="Hardware Breadboard Demo" width="320"/>
+  <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
+    <img src="docs/images/hardware_demo.gif" alt="Hardware Breadboard Demo" width="320"/>
+  </a>
   <br>
   <em>Şekil 1: Buton tetiklemeli transistörlü mandal/bellek devresinin fiziksel test anı (Set/Reset durumları ve LED göstergeleri).</em>
+  <br><br>
+  <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube_Shorts-Videoyu_İzle-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Shorts"/>
+  </a>
 </p>
+
+> 📺 **Canlı Uygulama Videosu:** Devrenin breadboard üzerindeki tam test ve çalışma videosunu izlemek için: [YouTube Shorts: Devre Donanım Testi](https://www.youtube.com/shorts/m_t2LGcSsNU)
 
 <p align="center">
   <img src="docs/images/breadboard_hardware.png" alt="Breadboard Hardware Setup" width="380"/>
