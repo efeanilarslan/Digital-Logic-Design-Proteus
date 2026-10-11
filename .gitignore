@@ -1,0 +1,14 @@
+# Proteus Design Suite workspace and backup files
+*.workspace.xml
+*.DESKTOP-*.workspace.xml
+*.Excalibur.*.workspace.xml
+Project Backups/
+*.pdsbak
+*.bak
+
+# macOS system files
+.DS_Store
+
+# Temporary and build artifacts
+*.tmp
+thumbs.db
