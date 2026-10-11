@@ -10,14 +10,14 @@ Projede iki aşamalı donanım prototipi geliştirilmiştir:
 1. **1. Devre (Temel Mandal):** Ayrık BJT transistörlerle kurulan ve test edilen **NOR tabanlı SR Latch** devresi.
 2. **2. Devre (Nihai Senkron Bellek):** SR Latch mimarisinin önüne iki adet AND kapısı ve bir evirici (inverter) eklenerek kararsız durumların önlendiği ve saat darbesiyle çalışan **Kenar Tetiklemeli D Flip-Flop** devresi.
 
-Aşağıdaki canlı test kaydı ve donanım kurulumu, breadboard üzerinde kurulan **2. Devre (D Flip-Flop)** uygulamasına aittir:
+Aşağıdaki canlı test kaydı ve donanım kurulumu:
 
 <p align="center">
   <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
     <img src="docs/images/hardware_demo.gif" alt="Hardware Breadboard Demo" width="320"/>
   </a>
   <br>
-  <em>Şekil 1: 2. Devre (D Flip-Flop) breadboard canlı donanım testi. <b>Mavi Buton</b>: Clock (Saat) darbesi, <b>Kırmızı Buton</b>: Data (D) veri girişi, <b>LED'ler</b>: Q ve Q̄ durum göstergeleri.</em>
+  <em>Şekil 1:SR latch breadboard canlı donanım testi. <b>Mavi Buton</b>: Clock (Saat) darbesi, <b>Kırmızı Buton</b>: Data (D) veri girişi, <b>LED'ler</b>: Q ve Q̄ durum göstergeleri.</em>
   <br><br>
   <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
     <img src="https://img.shields.io/badge/YouTube_Shorts-Videoyu_İzle-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Shorts"/>
