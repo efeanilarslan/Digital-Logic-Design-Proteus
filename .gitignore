@@ -12,3 +12,6 @@ Project Backups/
 # Temporary and build artifacts
 *.tmp
 thumbs.db
+
+# Private internship report (do not share)
+*Staj*.pdf

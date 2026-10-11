@@ -6,26 +6,30 @@ Bu proje; transistör seviyesinden başlayarak temel mantık kapılarına, belle
 
 ## 🛠️ Fiziksel Donanım Prototipi (Breadboard Implementasyonu)
 
-Ayrık bileşenler (BJT transistörler, dirençler, butonlar ve LED'ler) kullanılarak breadboard üzerinde kurulan mantık devresinin gerçek zamanlı çalışması:
+Projede iki aşamalı donanım prototipi geliştirilmiştir:
+1. **1. Devre (Temel Mandal):** Ayrık BJT transistörlerle kurulan ve test edilen **NOR tabanlı SR Latch** devresi.
+2. **2. Devre (Nihai Senkron Bellek):** SR Latch mimarisinin önüne iki adet AND kapısı ve bir evirici (inverter) eklenerek kararsız durumların önlendiği ve saat darbesiyle çalışan **Kenar Tetiklemeli D Flip-Flop** devresi.
+
+Aşağıdaki canlı test kaydı ve donanım kurulumu, breadboard üzerinde kurulan **2. Devre (D Flip-Flop)** uygulamasına aittir:
 
 <p align="center">
   <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
     <img src="docs/images/hardware_demo.gif" alt="Hardware Breadboard Demo" width="320"/>
   </a>
   <br>
-  <em>Şekil 1: Buton tetiklemeli transistörlü mandal/bellek devresinin fiziksel test anı (Set/Reset durumları ve LED göstergeleri).</em>
+  <em>Şekil 1: 2. Devre (D Flip-Flop) breadboard canlı donanım testi. <b>Mavi Buton</b>: Clock (Saat) darbesi, <b>Kırmızı Buton</b>: Data (D) veri girişi, <b>LED'ler</b>: Q ve Q̄ durum göstergeleri.</em>
   <br><br>
   <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
     <img src="https://img.shields.io/badge/YouTube_Shorts-Videoyu_İzle-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Shorts"/>
   </a>
 </p>
 
-> 📺 **Canlı Uygulama Videosu:** Devrenin breadboard üzerindeki tam test ve çalışma videosunu izlemek için: [YouTube Shorts: Devre Donanım Testi](https://www.youtube.com/shorts/m_t2LGcSsNU)
+> 📺 **Canlı Uygulama Videosu:** Devrenin breadboard üzerindeki tam test ve çalışma videosunu izlemek için: [YouTube Shorts: D Flip-Flop Donanım Testi](https://www.youtube.com/shorts/m_t2LGcSsNU)
 
 <p align="center">
   <img src="docs/images/breadboard_hardware.png" alt="Breadboard Hardware Setup" width="380"/>
   <br>
-  <em>Şekil 2: İki breadboard üzerine kurulan ayrık transistörlü mantık ve bellek devresi donanım düzeni.</em>
+  <em>Şekil 2: İki breadboard üzerine kurulan ayrık transistörlü mantık ve D Flip-Flop bellek devresi donanım düzeni.</em>
 </p>
 
 ---
@@ -49,17 +53,17 @@ flowchart TD
 Entegre devrelerin iç mimarisini anlamak amacıyla BJT transistörler (2N2222 NPN ve 2N2907 PNP) ve diyotlar kullanılarak push-pull / totem-pole yapısına benzer bir evirici (inverter) modellenmiştir.
 
 ### Simülasyon ve Mantık Durumları:
-Giriş gerilimine göre transistörlerin doyum (saturation) ve kesim (cut-off) bölgeleri test edilmiş, düğüm gerilimleri doğrulanmıştır:
+Devreler arası sinyal transferinde kapılar arası çalışma potansiyeli **1V** olarak belirlenmiştir. Yukarıdaki koldan uygulanan terslenecek sinyale (1V) göre transistörlerin doyum (saturation) ve kesim (cut-off) davranışları test edilmiştir:
 
-| Mantık Durumu 1 (Giriş LOW -> Çıkış HIGH) | Mantık Durumu 2 (Giriş HIGH -> Çıkış LOW) |
+| Mantık Durumu 1 (Giriş HIGH: 1V ➔ Çıkış LOW: 0.04V) | Mantık Durumu 2 (Giriş LOW: 0V ➔ Çıkış HIGH: 4.76V) |
 | :---: | :---: |
 | ![Inverter State 1](docs/images/bjt_inverter_state1.png) | ![Inverter State 2](docs/images/bjt_inverter_state2.png) |
-| *Giriş 0V iken çıkışta +4.76V (Lojik 1) elde edilir.* | *Giriş 5V iken çıkış gerilimi 0V seviyesine çöker (Lojik 0).* |
+| *Yukarıdaki giriş hattından 1.00V (Lojik 1) uygulandığında transistörler iletime geçerek çıkış gerilimini 0.04V (Lojik 0) seviyesine çeker.* | *Giriş hattı 0.00V (Lojik 0) iken transistörler kesime gider ve çıkış gerilimi +4.76V (Lojik 1) seviyesine yükselir.* |
 
 ### Akım Ölçümleri & ARES PCB Baskı Devre Tasarımı:
-Yük olarak LED bağlandığında çekilen akım seviyeleri (13.8 mA) ve devrenin tek katmanlı **ARES PCB (baskı devre)** plaket çizimi:
+Kapıların birbirini sürmesi haricinde, devrenin tek başına harici bir LED yükünü sürebilmesi için akım sınırlayıcı dirençlerle optimize edilmiş LED sürücü varyasyonu ve tek katmanlı **ARES PCB (baskı devre)** plaket çizimi:
 
-| LED Yüklü DC Akım Analizi | ARES Tek Katmanlı PCB Tasarımı |
+| LED Yüklü DC Akım Analizi (13.8 mA) | ARES Tek Katmanlı PCB Tasarımı |
 | :---: | :---: |
 | ![LED Circuit](docs/images/bjt_inverter_led_circuit.png) | ![PCB Layout](docs/images/pcb_layout.png) |
 
@@ -103,11 +107,12 @@ Kombinezonsal (combinational) mantıktan ardışıl (sequential) mantığa geçi
 
 ---
 
-## ⏱️ 4. Senkron Bellek: Kenar Tetiklemeli D Flip-Flop
+## ⏱️ 4. Senkron Bellek: Kenar Tetiklemeli D Flip-Flop (2. Devre Mimarisi)
 
-- Mandal devreleri seviye tetiklemeli (level-sensitive) iken, **D Flip-Flop** saat darbesinin (Clock) yükselen veya düşen kenarında veriyi kilitler.
-- Yarış durumlarını (race conditions) ortadan kaldırır.
-- Projede ana-uydu (master-slave) prensibine dayalı nihai D Flip-Flop tasarımı simüle edilmiştir.
+- **Yapısal Tasarım:** D Flip-Flop devresi, **NOR tabanlı SR Latch** yapısının girişine iki adet AND kapısı ve bir adet evirici (inverter) eklenerek oluşturulmuştur.
+- **Kararsız Durumun Önlenmesi:** Tek bir veri hattı ($D$) kullanıldığı için, giriş kapılarından birine $D$ doğrudan, diğerine ise terslenerek ($\bar{D}$) iletilir. Bu sayede SR Latch'lerdeki tehlikeli $S=1, R=1$ (kararsız/belirsiz) durumu yapısal olarak ortadan kalkar ve devre tam kararlılık kazanır.
+- **Saat (Clock) Tetiklemesi:** Mandal devreleri seviye tetiklemeli (level-sensitive) iken, bu D Flip-Flop mimarisi saat darbesinin ($Clock$) $0 \to 1$ geçişinde (yükselen kenarında) veriyi çıkışa kilitler ($Q = D$). Saat darbesi gelmediği sürece veri girişindeki dalgalanmalar çıkışı etkilemez (yarış durumları - race conditions önlenir).
+- **Fiziksel Prototip:** Breadboard üzerinde çalıştırılan ve videosu paylaşılan **2. Devre** tam olarak bu mimariyi temsil etmektedir (**Mavi Buton** = Clock, **Kırmızı Buton** = Data).
 
 ---
 
