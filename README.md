@@ -13,24 +13,24 @@ Projede iki aşamalı donanım prototipi geliştirilmiştir:
 Aşağıdaki canlı test kaydı ve donanım kurulumu:
 
 <p align="center">
-  <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
-    <img src="docs/images/hardware_demo.gif" alt="Hardware Breadboard Demo" width="320"/>
-  </a>
+  <img src="docs/images/hardware_demo.gif" alt="Hardware Breadboard Demo" width="320"/>
   <br>
-  <em>Şekil 1:SR latch breadboard canlı donanım testi. <b>Mavi Buton</b>: Clock (Saat) darbesi, <b>Kırmızı Buton</b>: Data (D) veri girişi, <b>LED'ler</b>: Q ve Q̄ durum göstergeleri.</em>
-  <br><br>
-  <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube_Shorts-Videoyu_İzle-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Shorts"/>
-  </a>
+  <em>Şekil 1: 1. Devre (SR Latch) breadboard canlı donanım testi (Ayrık transistörlü Set/Reset mandalının buton ve LED göstergeleriyle çalışması).</em>
 </p>
-
-> 📺 **Canlı Uygulama Videosu:** Devrenin breadboard üzerindeki tam test ve çalışma videosunu izlemek için: [YouTube Shorts: D Flip-Flop Donanım Testi](https://www.youtube.com/shorts/m_t2LGcSsNU)
 
 <p align="center">
-  <img src="docs/images/breadboard_hardware.png" alt="Breadboard Hardware Setup" width="380"/>
+  <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
+    <img src="docs/images/breadboard_hardware.png" alt="Breadboard Hardware Setup" width="380"/>
+  </a>
   <br>
-  <em>Şekil 2: İki breadboard üzerine kurulan ayrık transistörlü mantık ve D Flip-Flop bellek devresi donanım düzeni.</em>
+  <em>Şekil 2: 2. Devre (D Flip-Flop) iki breadboard üzerine kurulu nihai donanım prototipi. <b>Mavi Buton</b>: Clock (Saat) darbesi, <b>Kırmızı Buton</b>: Data (D) veri girişi, <b>LED'ler</b>: Q ve Q̄ çıkışları.</em>
+  <br><br>
+  <a href="https://www.youtube.com/shorts/m_t2LGcSsNU" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube_Shorts-2._Devre_(D_Flip--Flop)_Videosunu_İzle-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Shorts"/>
+  </a>
 </p>
+
+> 📺 **2. Devre Canlı Donanım Videosu:** Yukarıdaki fotoğrafa (Şekil 2) tıklayarak veya [YouTube Shorts: D Flip-Flop Donanım Testi](https://www.youtube.com/shorts/m_t2LGcSsNU) bağlantısı üzerinden 2. devrenin (D Flip-Flop) gerçek zamanlı çalışma videosunu izleyebilirsiniz.
 
 ---
 
